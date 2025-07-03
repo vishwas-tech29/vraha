@@ -254,69 +254,7 @@
         }
 
         /* Hero Section */
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-        }
-
-        .hero-content h1 {
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
-
-        .hero-content h1 span {
-            color: var(--accent);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .hero-btns {
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .hero-bg:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, var(--primary) 0%, rgba(10, 25, 47, 0.8) 50%, transparent 100%);
-            z-index: 2;
-        }
-
-        .hero-bg video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
-        }
+        -->
 
         .floating-shapes {
             position: absolute;
@@ -1054,29 +992,260 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-bg">
-            <video autoplay muted loop>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-futuristic-technological-interface-31539-large.mp4" type="video/mp4">
-            </video>
-        </div>
-        
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <h1>Empowering Brands Through <span>Code & Creativity</span></h1>
-                <p>Vraha delivers cutting-edge IT and creative solutions to help your business thrive in the digital landscape. From web development to branding, we've got you covered.</p>
-                <div class="hero-btns">
-                    <a href="#services" class="btn btn-primary">Explore Services</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="hero-bg">
+    <video id="vraha-video-bg" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+      <source src="/videoplayback (1).mp4" type="video/mp4">
+      <source src="/videoplayback (1).mp4" type="video/webm">
+      <img src="assets/hero-fallback.jpg" alt="Vraha background">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="reveal-text">Empowering Brands Through <span>Code & Creativity</span></h1>
+      <p class="reveal-text">Vraha delivers cutting-edge IT and creative solutions to help your business thrive in the digital landscape.</p>
+      <div class="hero-btns reveal-text">
+        <a href="#services" class="btn btn-primary">Explore Services</a>
+        <a href="#contact" class="btn btn-secondary">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background-color: #0a192f;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    #vraha-video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.8;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 25, 47, 0.5);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .hero-content p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .floating-shapes .shape {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.6;
+      filter: blur(1px);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .shape-1 {
+      top: 20%;
+      left: 10%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 0s;
+    }
+    .shape-2 {
+      top: 40%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    .shape-3 {
+      bottom: 10%;
+      left: 30%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(5deg); }
+    }
+
+    .hero-content span {
+      color: var(--accent);
+      background: linear-gradient(90deg, #64ffda, #00bfff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a192f;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .reveal-text {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      text-align: center;
+    }
+
+    .reveal-text:nth-child(1) { animation-delay: 0.3s; }
+    .reveal-text:nth-child(2) { animation-delay: 0.6s; }
+    .reveal-text:nth-child(3) { animation-delay: 0.9s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 5px 0;
+      }
+      
+      #vraha-video-bg {
+        opacity: 0.6;
+      }
+      
+      .hero-content {
+        padding: 0 15px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('vraha-video-bg');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('muted', '');
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          video.controls = false;
+        });
+      }
+    });
+  </script>
+</section>
+
 
     <!-- About Section -->
     <section id="about">
@@ -1107,7 +1276,156 @@
             </div>
         </div>
     </section>
+<!-- Founders Section -->
+<section id="founders">
+  <div class="container">
+    <h2 class="section-title">Meet Our Visionaries</h2>
+    <p class="section-subtitle">The brilliant minds behind Vraha's success</p>
+    
+    <div class="founders-grid">
+      <!-- Founder Card -->
+      <div class="founder-card">
+        <div class="founder-image">
+          <img src="/vishwas.jpeg" alt="Founder" >
+        </div>
+        <div class="founder-info">
+          <h3>vishwas rallapalli</h3>
+          <p class="founder-role">Founder & CEO</p>
+          <p class="founder-bio">With over 10 years in tech and design, vishwas founded Vraha to bridge technology and creativity.</p>
+          <div class="founder-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Co-Founder Card -->
+      <div class="founder-card">
+        <div class="founder-image">
+          <img src="/rishanth.jpg" alt="Co-Founder">
+        </div>
+        <div class="founder-info">
+          <h3>rishanth kothapalli</h3>
+          <p class="founder-role">Co-Founder & CTO</p>
+          <p class="founder-bio">rishanth brings deep technical expertise and a passion for building scalable solutions.</p>
+          <div class="founder-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <style>
+    #founders {
+      background-color: var(--secondary);
+      text-align: center;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .founder-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .founder-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .founder-image {
+      height: 300px;
+      overflow: hidden;
+    }
+    
+    .founder-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .founder-card:hover .founder-image img {
+      transform: scale(1.05);
+    }
+    
+    .founder-info {
+      padding: 25px;
+    }
+    
+    .founder-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    
+    .founder-role {
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+    
+    .founder-bio {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    .founder-social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .founder-social a {
+      color: var(--text-secondary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .founder-social a:hover {
+      color: var(--accent);
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+    
+    @media (max-width: 768px) {
+      .founders-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .founder-image {
+        height: 250px;
+      }
+    }
+  </style>
+</section>
     <!-- Services Section -->
     <section id="services">
         <div class="container">
@@ -1254,6 +1572,9 @@
         </div>
     </section>
 
+
+
+    
     <!-- Why Choose Us Section -->
     <section id="why-us">
         <div class="container">
