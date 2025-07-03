@@ -1,962 +1,1747 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Active Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vraha - Empowering Brands Through Code & Creativity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #64ffda;
+            --accent-purple: #9370db;
+            --accent-blue: #00bfff;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --white: #e6f1ff;
+            --transition: all 0.3s ease-in-out;
+        }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        [data-theme="light"] {
+            --primary: #f8f9fa;
+            --secondary: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --white: #212529;
+        }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
 
-  <!-- =======================================================
-  * Template Name: Active
-  * Template URL: https://bootstrapmade.com/active-bootstrap-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        ::-webkit-scrollbar-track {
+            background: var(--secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(23, 42, 69, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .light .glass {
+            background: rgba(233, 236, 239, 0.7);
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            margin-left: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+
+        .light header.scrolled {
+            background: rgba(248, 249, 250, 0.9);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-bg:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--primary) 0%, rgba(10, 25, 47, 0.8) 50%, transparent 100%);
+            z-index: 2;
+        }
+
+        .hero-bg video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.3;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-blue);
+            top: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-purple);
+            bottom: 10%;
+            right: 10%;
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            top: 50%;
+            right: 30%;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--secondary);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            padding: 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(100, 255, 218, 0) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover:before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: var(--secondary);
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            padding: 8px 20px;
+            margin: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 5px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay p {
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay h3,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+
+        .portfolio-overlay a {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 15px;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay a {
+            transform: translateY(0);
+        }
+
+        /* Why Choose Us Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--secondary);
+        }
+
+        .testimonials-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .testimonial-slide {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-quote:before,
+        .testimonial-quote:after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--accent);
+            opacity: 0.5;
+        }
+
+        .testimonial-quote:before {
+            margin-right: 5px;
+        }
+
+        .testimonial-quote:after {
+            margin-left: 5px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--text-secondary);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--text-secondary);
+            background: transparent;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .map-container {
+            margin-top: 50px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 5px 0 0 5px;
+            border: 1px solid var(--text-secondary);
+            background: transparent;
+            color: var(--text-primary);
+            outline: none;
+        }
+
+        .newsletter-btn {
+            padding: 10px 15px;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: var(--text-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transition);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--secondary);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1000;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Active.</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Vraha<span>.</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+                
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-    </div>
-  </header>
-
-  <main class="main">
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg">
+            <video autoplay muted loop>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-futuristic-technological-interface-31539-large.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Empowering Brands Through <span>Code & Creativity</span></h1>
+                <p>Vraha delivers cutting-edge IT and creative solutions to help your business thrive in the digital landscape. From web development to branding, we've got you covered.</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2" data-aos="fade-up" data-aos-delay="400">
-            <div class="swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  },
-                  "breakpoints": {
-                    "320": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 40
-                    },
-                    "1200": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 1
-                    }
-                  }
-                }
-              </script>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_6.jpg" alt="Image" class="img-fluid">
+    <section id="about">
+        <div class="container">
+            <h2>About Vraha</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2023, Vraha is a dynamic startup that bridges the gap between technology and creativity. We believe in the power of innovative solutions to transform businesses and create meaningful connections with audiences.</p>
+                    <p>Our mission is to empower brands of all sizes with custom digital solutions that drive growth, enhance visibility, and create memorable experiences. We combine technical expertise with creative vision to deliver results that matter.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="projectsCount">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="clientsCount">0</div>
+                            <div class="stat-label">Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="teamCount">0</div>
+                            <div class="stat-label">Team Members</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_7.jpg" alt="Image" class="img-fluid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Vraha Team">
                 </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_8.jpg" alt="Image" class="img-fluid">
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
             </div>
-          </div>
-          <div class="col-lg-4 order-lg-1">
-            <span class="section-subtitle" data-aos="fade-up">Welcome</span>
-            <h1 class="mb-4" data-aos="fade-up">
-              Excepteur sint occaecat cupidatat non proident
-            </h1>
-            <p data-aos="fade-up">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated they
-              live in Bookmarksgrove right at the coast of the Semantics, a large
-              language ocean.
-            </p>
-            <p class="mt-5" data-aos="fade-up">
-              <a href="#" class="btn btn-get-started">Get Started</a>
-            </p>
-          </div>
         </div>
-      </div>
-    </section><!-- /About Section -->
-
-    <!-- About 2 Section -->
-    <section id="about-2" class="about-2 section light-background">
-
-      <div class="container">
-        <div class="content">
-          <div class="row justify-content-center">
-            <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
-              <div class="img-wrap text-center text-md-left" data-aos="fade-up" data-aos-delay="100">
-                <div class="img">
-                  <img src="assets/img/img_v_3.jpg" alt="circle image" class="img-fluid">
-                </div>
-              </div>
-            </div>
-
-            <div class="offset-md-0 offset-lg-1 col-sm-12 col-md-5 col-lg-5 col-xl-4" data-aos="fade-up">
-              <div class="px-3">
-                <span class="content-subtitle">Our Mission</span>
-                <h2 class="content-title text-start">
-                  The Big Oxmox advised her not to do so, because there were
-                  thousands.
-                </h2>
-                <p class="lead">
-                  A small river named Duden flows by their place and supplies it
-                  with the necessary regelialia. It is a paradisematic country.
-                </p>
-                <p class="mb-5">
-                  The Big Oxmox advised her not to do so, because there were
-                  thousands of bad Commas, wild Question Marks and devious Semikoli.
-                </p>
-                <p>
-                  <a href="#" class="btn-get-started">Get Started</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /About 2 Section -->
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="services section light-background">
-
-      <div class="container">
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-3">
-            <div class="services-item" data-aos="fade-up">
-              <div class="services-icon">
-                <i class="bi bi-bullseye"></i>
-              </div>
-              <div>
-                <h3>Technology</h3>
-                <p>Separated they live in Bookmarksgrove right at the coast</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3">
-            <div class="services-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="services-icon">
-                <i class="bi bi-command"></i>
-              </div>
-              <div>
-                <h3>Web Design</h3>
-                <p>Separated they live in Bookmarksgrove right at the coast</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3">
-            <div class="services-item" data-aos="fade-up" data-aos-delay="200">
-              <div class="services-icon">
-                <i class="bi bi-bar-chart"></i>
-              </div>
-              <div>
-                <h3>Branding</h3>
-                <p>Separated they live in Bookmarksgrove right at the coast</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- /Services Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-5">
-            <div class="images-overlap">
-              <img src="assets/img/img_v_1.jpg" alt="student" class="img-fluid img-1" data-aos="fade-up">
-            </div>
-          </div>
-
-          <div class="col-lg-4 ps-lg-5">
-            <span class="content-subtitle">Why Us</span>
-            <h2 class="content-title">Far far away Behind the Word Mountains</h2>
-            <p class="lead">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia.
-            </p>
-            <p class="mb-5">
-              There live the blind texts. Separated they live in Bookmarksgrove
-              right at the coast of the Semantics, a large language ocean.
-            </p>
-            <div class="row mb-5 count-numbers">
-
-              <!-- Start Stats Item -->
-              <div class="col-4 counter" data-aos="fade-up" data-aos-delay="100">
-                <span data-purecounter-separator="true" data-purecounter-start="0" data-purecounter-end="3919" data-purecounter-duration="1" class="purecounter number"></span>
-                <span class="d-block">Coffee</span>
-              </div>
-              <!-- End Stats Item -->
-
-              <!-- Start Stats Item -->
-              <div class="col-4 counter" data-aos="fade-up" data-aos-delay="200">
-                <span data-purecounter-separator="true" data-purecounter-start="0" data-purecounter-end="2831" data-purecounter-duration="1" class="purecounter number"></span>
-                <span class="d-block">Codes</span>
-              </div>
-              <!-- End Stats Item -->
-
-              <!-- Start Stats Item -->
-              <div class="col-4 counter" data-aos="fade-up" data-aos-delay="300">
-                <span data-purecounter-separator="true" data-purecounter-start="0" data-purecounter-end="1914" data-purecounter-duration="1" class="purecounter number"></span>
-                <span class="d-block">Projects</span>
-              </div>
-              <!-- End Stats Item -->
-
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- /Stats Section -->
-
-    <!-- Blog Posts Section -->
-    <section id="blog-posts" class="blog-posts section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <p>Recent Posts</p>
-        <h2>Blog Posts</h2>
-      </div><!-- End Section Title -->
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-md-6 col-lg-4">
-            <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
-              <a href="#" class="thumb d-block"><img src="assets/img/img_h_4.jpg" alt="Image" class="img-fluid rounded"></a>
-
-              <div class="post-content">
-                <div class="meta">
-                  <a href="#" class="cat">Development</a> •
-                  <span class="date">July 20, 2020</span>
-                </div>
-                <h3><a href="#">There live the blind texts they live</a></h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries
-                  Vokalia and Consonantia, there live the blind texts.
-                </p>
-
-                <div class="d-flex author align-items-center">
-                  <div class="pic">
-                    <img src="assets/img/team/team-3.jpg" alt="Image" class="img-fluid rounded-circle">
-                  </div>
-                  <div class="author-name">
-                    <strong class="d-block">Winston Gold</strong>
-                    <span class="">Lead Product Designer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
-              <a href="#" class="thumb d-block"><img src="assets/img/img_h_2.jpg" alt="Image" class="img-fluid rounded"></a>
-
-              <div class="post-content">
-                <div class="meta">
-                  <a href="#" class="cat">Development</a> •
-                  <span class="date">July 20, 2020</span>
-                </div>
-                <h3><a href="#">There live the blind texts they live</a></h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries
-                  Vokalia and Consonantia, there live the blind texts.
-                </p>
-
-                <div class="d-flex author align-items-center">
-                  <div class="pic">
-                    <img src="assets/img/team/team-2.jpg" alt="Image" class="img-fluid rounded-circle">
-                  </div>
-                  <div class="author-name">
-                    <strong class="d-block">Winston Gold</strong>
-                    <span class="">Lead Product Designer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <div class="post-entry" data-aos="fade-up" data-aos-delay="300">
-              <a href="#" class="thumb d-block"><img src="assets/img/img_h_3.jpg" alt="Image" class="img-fluid rounded"></a>
-
-              <div class="post-content">
-                <div class="meta">
-                  <a href="#" class="cat">Development</a> •
-                  <span class="date">July 20, 2020</span>
-                </div>
-                <h3><a href="#">There live the blind texts they live</a></h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries
-                  Vokalia and Consonantia, there live the blind texts.
-                </p>
-
-                <div class="d-flex author align-items-center">
-                  <div class="pic">
-                    <img src="assets/img/team/team-1.jpg" alt="Image" class="img-fluid rounded-circle">
-                  </div>
-                  <div class="author-name">
-                    <strong class="d-block">Winston Gold</strong>
-                    <span class="">Lead Product Designer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Blog Posts Section -->
-
-    <!-- Tabs Section -->
-    <section id="tabs" class="tabs section light-background">
-
-      <div class="container">
-        <div class="row gap-x-lg-4 justify-content-between">
-          <div class="col-lg-4 js-custom-dots">
-            <a href="#" class="service-item link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-              <div class="service-icon color-1 mb-4">
-                <i class="bi bi-alarm"></i>
-              </div>
-              <!-- /.icon -->
-              <div class="service-contents">
-                <h3>Modern and clean design</h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries .
-                </p>
-              </div>
-              <!-- /.service-contents-->
-            </a>
-            <!-- /.service -->
-
-            <a href="#" class="service-item link horizontal d-flex" data-aos="fade-left" data-aos-delay="100">
-              <div class="service-icon color-2 mb-4">
-                <i class="bi bi-bag-check"></i>
-              </div>
-              <!-- /.icon -->
-              <div class="service-contents">
-                <h3>Sell Products</h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries .
-                </p>
-              </div>
-              <!-- /.service-contents-->
-            </a>
-            <!-- /.service -->
-
-            <a href="#" class="service-item link horizontal d-flex" data-aos="fade-left" data-aos-delay="200">
-              <div class="service-icon color-3 mb-4">
-                <i class="bi bi-briefcase"></i>
-              </div>
-              <!-- /.icon -->
-              <div class="service-contents">
-                <h3>Success Every Day</h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries .
-                </p>
-              </div>
-              <!-- /.service-contents-->
-            </a>
-            <!-- /.service -->
-
-            <a href="#" class="service-item link horizontal d-flex" data-aos="fade-left" data-aos-delay="300">
-              <div class="service-icon color-4 mb-4">
-                <i class="bi bi-easel"></i>
-              </div>
-              <!-- /.icon -->
-              <div class="service-contents">
-                <h3>Bring Ideas to Life</h3>
-                <p>
-                  Far far away, behind the word mountains, far from the countries .
-                </p>
-              </div>
-              <!-- /.service-contents-->
-            </a>
-            <!-- /.service -->
-          </div>
-
-          <div class="col-lg-8">
-            <div class="swiper init-swiper-tabs">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoHeight": true,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  },
-                  "breakpoints": {
-                    "320": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 40
-                    },
-                    "1200": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 1
-                    }
-                  }
-                }
-              </script>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_1.jpg" alt="Image" class="img-fluid">
-                  <div class="p-4">
-                    <h3 class="text-black h5 mb-3">Modern and clean design</h3>
-                    <div class="row">
-                      <div class="col-lg-8">
-                        <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the blind
-                          texts. Separated they live in Bookmarksgrove right at the
-                          coast of the Semantics, a large language ocean.
-                        </p>
-                        <p>
-                          A small river named Duden flows by their place and
-                          supplies it with the necessary regelialia. It is a
-                          paradisematic country, in which roasted parts of sentences
-                          fly into your mouth.
-                        </p>
-                      </div>
-                      <div class="col-lg-4">
-                        <ul class="list-unstyled list-check">
-                          <li>Far far away, behind the word</li>
-                          <li>Far from the countries Vokalia</li>
-                          <li>Separated they live in Bookmarksgrove</li>
-                        </ul>
-                      </div>
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of IT and creative services to meet all your digital needs.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
                     </div>
-                  </div>
+                    <h3>Website Development</h3>
+                    <p>Custom, responsive websites built with the latest technologies to ensure performance, security, and scalability.</p>
                 </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_2.jpg" alt="Image" class="img-fluid">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_3.jpg" alt="Image" class="img-fluid">
-                </div>
-                <div class="swiper-slide">
-                  <img src="assets/img/img_h_4.jpg" alt="Image" class="img-fluid">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Tabs Section -->
-
-    <!-- Services 2 Section -->
-    <section id="services-2" class="services-2 section">
-
-      <div class="container">
-        <div class="row justify-content-center" data-aos="fade-up">
-          <div class="col-md-6 col-lg-4">
-            <span class="content-subtitle">Our Services</span>
-            <h2 class="content-title">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia
-            </h2>
-            <p class="lead">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts.
-            </p>
-            <p class="mb-5">
-              Separated they live in Bookmarksgrove right at the coast of the
-              Semantics, a large language ocean.
-            </p>
-            <p>
-              <a href="#" class="btn btn-get-started">Get Started</a>
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-6 ps-lg-5">
-            <div class="row">
-              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="services-item" data-aos="fade-up" data-aos-delay="">
-                  <div class="services-icon">
-                    <i class="bi bi-search"></i>
-                  </div>
-                  <div>
-                    <h3>Square</h3>
-                    <p>Separated they live in Bookmarksgrove right at the coast</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="services-item" data-aos="fade-up" data-aos-delay="100">
-                  <div class="services-icon">
-                    <i class="bi bi-command"></i>
-                  </div>
-                  <div>
-                    <h3>Technology</h3>
-                    <p>Separated they live in Bookmarksgrove right at the coast</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="services-item" data-aos="fade-up" data-aos-delay="200">
-                  <div class="services-icon">
-                    <i class="bi bi-grid"></i>
-                  </div>
-                  <div>
-                    <h3>Brilliant Ideas</h3>
-                    <p>Separated they live in Bookmarksgrove right at the coast</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
-                <div class="services-item" data-aos="fade-up" data-aos-delay="300">
-                  <div class="services-icon">
-                    <i class="bi bi-globe"></i>
-                  </div>
-                  <div>
-                    <h3>Blueprint</h3>
-                    <p>Separated they live in Bookmarksgrove right at the coast</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Services 2 Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <p>Plans</p>
-        <h2>Pricing Table</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-item recommended">
-              <span class="recommended-badge">Recommended</span>
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="pricing-item">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <p>Plans</p>
-        <h2>Frequently Asked Questions</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="col-12">
-            <div class="custom-accordion" id="accordion-faq">
-              <div class="accordion-item">
-                <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1">
-                    How to download and register?
-                  </button>
-                </h2>
-
-                <div id="collapse-faq-1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-faq">
-                  <div class="accordion-body">
-                    Far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts. Separated
-                    they live in Bookmarksgrove right at the coast of the Semantics,
-                    a large language ocean.
-                  </div>
-                </div>
-              </div>
-              <!-- .accordion-item -->
-
-              <div class="accordion-item">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2" "="">
-                How to create your paypal account?
-              </button>
-            </h2>
-            <div id=" collapse-faq-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-faq">
-                    <div class="accordion-body">
-                      A small river named Duden flows by their place and supplies it
-                      with the necessary regelialia. It is a paradisematic country, in
-                      which roasted parts of sentences fly into your mouth.
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
-              </div>
-            </div>
-            <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-3">
-                  How to link your paypal and bank account?
-                </button>
-              </h2>
-
-              <div id="collapse-faq-3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
-                <div class="accordion-body">
-                  When she reached the first hills of the Italic Mountains, she
-                  had a last view back on the skyline of her hometown
-                  Bookmarksgrove, the headline of Alphabet Village and the subline
-                  of her own road, the Line Lane. Pityful a rethoric question ran
-                  over her cheek, then she continued her way.
+                    <h3>Mobile App Development</h3>
+                    <p>Native and cross-platform mobile applications designed to engage users and deliver exceptional experiences.</p>
                 </div>
-              </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Advertising & Branding</h3>
+                    <p>Strategic branding and advertising solutions to establish your identity and reach your target audience.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Editing & B-Rolls</h3>
+                    <p>Professional video production and editing services to tell your story and captivate your audience.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Poster Design</h3>
+                    <p>Eye-catching graphic designs for posters, banners, and promotional materials that stand out.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Automation Tools</h3>
+                    <p>Custom automation solutions to streamline your workflows and boost productivity.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Freelancing Services</h3>
+                    <p>Access to skilled professionals for short-term projects or specialized tasks.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Custom Solutions</h3>
+                    <p>Tailored services designed specifically for your unique business requirements.</p>
+                </div>
             </div>
-            <!-- .accordion-item -->
-
-          </div>
         </div>
-      </div>
-      </div>
-    </section><!-- /Faq Section -->
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Our Work</h2>
+            <p>Explore some of our recent projects across different industries and service categories.</p>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="app">Mobile Apps</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="video">Video</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Web Project 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Custom online store with payment integration</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="App Project 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Fitness Tracker App</h3>
+                        <p>Cross-platform health and wellness application</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="design">
+                    <img src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1130&q=80" alt="Design Project 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Brand Identity</h3>
+                        <p>Complete branding package for startup</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="video">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Video Project 1" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Product Promo Video</h3>
+                        <p>60-second commercial for new product launch</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Web Project 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Corporate Website</h3>
+                        <p>Modern responsive design for financial firm</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="app">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="App Project 2" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Food Delivery App</h3>
+                        <p>iOS and Android app for local restaurant</p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us">
+        <div class="container">
+            <h2>Why Choose Vraha?</h2>
+            <p>We stand out from the competition with our unique approach and commitment to excellence.</p>
+            
+            <div class="features">
+                <div class="feature-item glass">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Creative Team</h3>
+                    <p>Our talented professionals bring diverse skills and fresh perspectives to every project.</p>
+                </div>
+                
+                <div class="feature-item glass">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>We respect your time and deliver quality results within agreed timelines.</p>
+                </div>
+                
+                <div class="feature-item glass">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Premium services at competitive rates with transparent pricing models.</p>
+                </div>
+                
+                <div class="feature-item glass">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Ongoing Support</h3>
+                    <p>We provide continuous support and maintenance after project completion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <p>Happy Customers</p>
-        <h2>Testimonials</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-7">
-            <div class="swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  },
-                  "breakpoints": {
-                    "320": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 40
-                    },
-                    "1200": {
-                      "slidesPerView": 1,
-                      "spaceBetween": 1
-                    }
-                  }
-                }
-              </script>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="testimonial mx-auto">
-                    <figure class="img-wrap">
-                      <img src="assets/img/testimonials/testimonials-1.jpg" alt="Image" class="img-fluid">
-                    </figure>
-                    <h3 class="name">Adam Aderson</h3>
-                    <blockquote>
-                      <p>
-                        “There live the blind texts. Separated they live in
-                        Bookmarksgrove right at the coast of the Semantics, a large
-                        language ocean.”
-                      </p>
-                    </blockquote>
-                  </div>
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from businesses that have transformed with our solutions.</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-slide active">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client 1" class="testimonial-avatar">
+                    <p class="testimonial-quote">Vraha completely transformed our online presence. Their web development team delivered a stunning e-commerce platform that increased our sales by 150% within three months.</p>
+                    <h4 class="testimonial-author">Sarah Johnson</h4>
+                    <p class="testimonial-role">CEO, Fashion Boutique</p>
                 </div>
-                <div class="swiper-slide">
-                  <div class="testimonial mx-auto">
-                    <figure class="img-wrap">
-                      <img src="assets/img/testimonials/testimonials-2.jpg" alt="Image" class="img-fluid">
-                    </figure>
-                    <h3 class="name">Lukas Devlin</h3>
-                    <blockquote>
-                      <p>
-                        “There live the blind texts. Separated they live in
-                        Bookmarksgrove right at the coast of the Semantics, a large
-                        language ocean.”
-                      </p>
-                    </blockquote>
-                  </div>
+                
+                <div class="testimonial-slide">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client 2" class="testimonial-avatar">
+                    <p class="testimonial-quote">The mobile app developed by Vraha exceeded our expectations. Their attention to detail and user experience focus resulted in an app our customers love to use daily.</p>
+                    <h4 class="testimonial-author">Michael Chen</h4>
+                    <p class="testimonial-role">Founder, HealthTech Startup</p>
                 </div>
-                <div class="swiper-slide">
-                  <div class="testimonial mx-auto">
-                    <figure class="img-wrap">
-                      <img src="assets/img/testimonials/testimonials-3.jpg" alt="Image" class="img-fluid">
-                    </figure>
-                    <h3 class="name">Kayla Bryant</h3>
-                    <blockquote>
-                      <p>
-                        “There live the blind texts. Separated they live in
-                        Bookmarksgrove right at the coast of the Semantics, a large
-                        language ocean.”
-                      </p>
-                    </blockquote>
-                  </div>
+                
+                <div class="testimonial-slide">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client 3" class="testimonial-avatar">
+                    <p class="testimonial-quote">Working with Vraha on our branding was a game-changer. They understood our vision and created a cohesive identity that resonates with our target audience.</p>
+                    <h4 class="testimonial-author">Emily Rodriguez</h4>
+                    <p class="testimonial-role">Marketing Director, Tech Firm</p>
                 </div>
-              </div>
-              <div class="swiper-pagination"></div>
+                
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-slide="0"></div>
+                    <div class="testimonial-dot" data-slide="1"></div>
+                    <div class="testimonial-dot" data-slide="2"></div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section><!-- /Testimonials Section -->
+    </section>
 
-  </main>
-
-  <footer id="footer" class="footer light-background">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-          <div class="widget">
-            <h3 class="widget-heading">About Us</h3>
-            <p class="mb-4">
-              There live the blind texts. Separated they live in Bookmarksgrove
-              right at the coast of the Semantics, a large language ocean.
-            </p>
-            <p class="mb-0">
-              <a href="#" class="btn-learn-more">Learn more</a>
-            </p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 ps-lg-5 mb-3 mb-md-0">
-          <div class="widget">
-            <h3 class="widget-heading">Navigation</h3>
-            <ul class="list-unstyled float-start me-5">
-              <li><a href="#">Overview</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Find Buyers</a></li>
-            </ul>
-            <ul class="list-unstyled float-start">
-              <li><a href="#">Overview</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 pl-lg-5">
-          <div class="widget">
-            <h3 class="widget-heading">Recent Posts</h3>
-            <ul class="list-unstyled footer-blog-entry">
-              <li>
-                <span class="d-block date">May 3, 2020</span>
-                <a href="#">There live the Blind Texts</a>
-              </li>
-              <li>
-                <span class="d-block date">May 3, 2020</span>
-                <a href="#">Separated they live in Bookmarksgrove right</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 pl-lg-5">
-          <div class="widget">
-            <h3 class="widget-heading">Connect</h3>
-            <ul class="list-unstyled social-icons light mb-3">
-              <li>
-                <a href="#"><span class="bi bi-facebook"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="bi bi-twitter-x"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="bi bi-linkedin"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="bi bi-google"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="bi bi-google-play"></span></a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="widget">
-            <div class="footer-subscribe">
-              <h3 class="widget-heading">Subscribe</h3>
-              <form action="forms/newsletter.php" method="post" class="php-email-form">
-                <div class="mb-2">
-                  <input type="text" class="form-control" name="email" placeholder="Enter your email">
-
-                  <button type="submit" class="btn btn-link">
-                    <span class="bi bi-arrow-right"></span>
-                  </button>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Ready to start your project? Contact us today for a free consultation.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p>123 Tech Street, Innovation City, IC 12345</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p>hello@vraha.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <p>Monday - Friday: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                    </div>
                 </div>
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">
-                  Your subscription request has been sent. Thank you!
+                
+                <div class="contact-form">
+                    <form id="quoteForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="service" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="web">Website Development</option>
+                                <option value="app">Mobile App Development</option>
+                                <option value="branding">Advertising & Branding</option>
+                                <option value="video">Video Editing & B-Rolls</option>
+                                <option value="design">Poster Design</option>
+                                <option value="automation">Automation Tools</option>
+                                <option value="freelance">Freelancing Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get a Quote</button>
+                    </form>
                 </div>
-              </form>
             </div>
-          </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510728!2d-73.98784492430212!3d40.74844097138945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689877882902!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="copyright d-flex flex-column flex-md-row align-items-center justify-content-md-between">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Active.</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo">Vraha<span>.</span></a>
+                    <p>Empowering brands through innovative technology and creative solutions since 2023.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Video Production</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vraha. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
         </div>
-      </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Thank You!</h2>
+            <p>Your quote request has been submitted successfully. Our team will get back to you within 24 hours.</p>
+            <button class="btn btn-primary" id="closeModalBtn">Close</button>
+        </div>
     </div>
-  </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
 
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light');
+            localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+            themeToggle.innerHTML = body.classList.contains('light') ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Animated Counters
+        function animateCounters() {
+            const projectsCount = document.getElementById('projectsCount');
+            const clientsCount = document.getElementById('clientsCount');
+            const teamCount = document.getElementById('teamCount');
+
+            const targetProjects = 87;
+            const targetClients = 42;
+            const targetTeam = 15;
+
+            let currentProjects = 0;
+            let currentClients = 0;
+            let currentTeam = 0;
+
+            const interval = setInterval(() => {
+                if (currentProjects < targetProjects) {
+                    currentProjects += 1;
+                    projectsCount.textContent = currentProjects;
+                }
+
+                if (currentClients < targetClients) {
+                    currentClients += 1;
+                    clientsCount.textContent = currentClients;
+                }
+
+                if (currentTeam < targetTeam) {
+                    currentTeam += 1;
+                    teamCount.textContent = currentTeam;
+                }
+
+                if (currentProjects >= targetProjects && 
+                    currentClients >= targetClients && 
+                    currentTeam >= targetTeam) {
+                    clearInterval(interval);
+                }
+            }, 30);
+        }
+
+        // Portfolio Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Testimonial Slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonialSlides[index].classList.add('active');
+            testimonialDots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // Auto-advance slides
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonialSlides.length;
+            showSlide(currentSlide);
+        }, 5000);
+
+        // Quote Form
+        const quoteForm = document.getElementById('quoteForm');
+        const quoteModal = document.getElementById('quoteModal');
+        const closeModal = document.querySelector('.close-modal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        quoteForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            quoteModal.classList.add('active');
+            quoteForm.reset();
+        });
+
+        closeModal.addEventListener('click', () => {
+            quoteModal.classList.remove('active');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            quoteModal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === quoteModal) {
+                quoteModal.classList.remove('active');
+            }
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero text animation
+        gsap.from('.hero-content h1, .hero-content p, .hero-btns', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+
+        // Floating shapes animation
+        gsap.to('.shape-1', {
+            duration: 15,
+            x: 100,
+            y: 50,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        gsap.to('.shape-2', {
+            duration: 20,
+            x: -100,
+            y: -50,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        gsap.to('.shape-3', {
+            duration: 12,
+            x: -50,
+            y: 30,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+
+        // Section animations
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Service cards animation
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Portfolio items animation
+        gsap.utils.toArray('.portfolio-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Feature items animation
+        gsap.utils.toArray('.feature-item').forEach((item, i) => {
+            gsap.from(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.5,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Initialize counters when about section is in view
+        ScrollTrigger.create({
+            trigger: "#about",
+            start: "top 70%",
+            onEnter: animateCounters,
+            once: true
+        });
+    </script>
 </body>
-
 </html>
