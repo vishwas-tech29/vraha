@@ -1279,19 +1279,19 @@
 <!-- Founders Section -->
 <section id="founders">
   <div class="container">
-    <h2 class="section-title">Meet Our Visionaries</h2>
-    <p class="section-subtitle">The brilliant minds behind Vraha's success</p>
-    
+    <h2 class="section-title animate-fade-in">Meet Our Visionaries</h2>
+    <p class="section-subtitle animate-fade-in delay-1">The brilliant minds behind Vraha's success</p>
+
     <div class="founders-grid">
       <!-- Founder Card -->
-      <div class="founder-card">
+      <div class="founder-card animate-slide-up">
         <div class="founder-image">
-          <img src="/vishwas.jpeg" alt="Founder" >
+          <img src="/vishwas.jpeg" alt="Vishwas Rallapalli">
         </div>
         <div class="founder-info">
-          <h3>vishwas rallapalli</h3>
+          <h3>Vishwas Rallapalli</h3>
           <p class="founder-role">Founder & CEO</p>
-          <p class="founder-bio">With over 10 years in tech and design, vishwas founded Vraha to bridge technology and creativity.</p>
+          <p class="founder-bio">With over 10 years in tech and design, Vishwas founded Vraha to bridge technology and creativity.</p>
           <div class="founder-social">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1299,16 +1299,33 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Co-Founder Card -->
-      <div class="founder-card">
+      <div class="founder-card animate-slide-up delay-1">
         <div class="founder-image">
-          <img src="/rishanth.jpg" alt="Co-Founder">
+          <img src="/rishanth.jpg" alt="Rishanth Kothapalli">
         </div>
         <div class="founder-info">
-          <h3>rishanth kothapalli</h3>
+          <h3>Rishanth Kothapalli</h3>
           <p class="founder-role">Co-Founder & CTO</p>
-          <p class="founder-bio">rishanth brings deep technical expertise and a passion for building scalable solutions.</p>
+          <p class="founder-bio">Rishanth brings deep technical expertise and a passion for building scalable solutions.</p>
+          <div class="founder-social">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Manager Card -->
+      <div class="founder-card animate-slide-up delay-2">
+        <div class="founder-image">
+          <img src="/6102463785731208715.jpg" alt="Jathin D.">
+        </div>
+        <div class="founder-info">
+          <h3>Jathin D.</h3>
+          <p class="founder-role">Chief Strategy Officer (CSO)</p>
+          <p class="founder-bio">Jathin drives Vraha’s long-term vision, innovation roadmap, and strategic growth initiatives across global markets.</p>
           <div class="founder-social">
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1323,19 +1340,21 @@
     #founders {
       background-color: var(--secondary);
       text-align: center;
+      padding: 4rem 1rem;
     }
-    
+
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      animation: fadeIn 1s ease forwards;
     }
-    
+
     .section-subtitle {
       color: var(--text-secondary);
       margin-bottom: 3rem;
       font-size: 1.1rem;
     }
-    
+
     .founders-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1343,61 +1362,64 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-    
+
     .founder-card {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 15px;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: slideUp 0.8s ease forwards;
     }
-    
+
     .founder-card:hover {
       transform: translateY(-10px);
+      transition: transform 0.3s ease;
     }
-    
+
     .founder-image {
       height: 300px;
       overflow: hidden;
     }
-    
+
     .founder-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    
+
     .founder-card:hover .founder-image img {
       transform: scale(1.05);
     }
-    
+
     .founder-info {
       padding: 25px;
     }
-    
+
     .founder-info h3 {
       font-size: 1.5rem;
       margin-bottom: 5px;
     }
-    
+
     .founder-role {
       color: var(--accent);
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 15px;
     }
-    
+
     .founder-bio {
       color: var(--text-secondary);
       margin-bottom: 20px;
       line-height: 1.6;
     }
-    
+
     .founder-social {
       display: flex;
       justify-content: center;
       gap: 15px;
     }
-    
+
     .founder-social a {
       color: var(--text-secondary);
       width: 40px;
@@ -1408,24 +1430,49 @@
       justify-content: center;
       transition: all 0.3s ease;
     }
-    
+
     .founder-social a:hover {
       color: var(--accent);
       background: rgba(100, 255, 218, 0.1);
       transform: translateY(-3px);
     }
-    
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Delay Classes */
+    .delay-1 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.6s;
+    }
+
     @media (max-width: 768px) {
       .founders-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .founder-image {
         height: 250px;
       }
     }
   </style>
 </section>
+
     <!-- Services Section -->
     <section id="services">
         <div class="container">
@@ -1656,83 +1703,245 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Ready to start your project? Contact us today for a free consultation.</p>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <p>123 Tech Street, Innovation City, IC 12345</p>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <p>hello@vraha.com</p>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <p>Monday - Friday: 9AM - 6PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="quoteForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" id="service" required>
-                                <option value="" disabled selected>Select Service</option>
-                                <option value="web">Website Development</option>
-                                <option value="app">Mobile App Development</option>
-                                <option value="branding">Advertising & Branding</option>
-                                <option value="video">Video Editing & B-Rolls</option>
-                                <option value="design">Poster Design</option>
-                                <option value="automation">Automation Tools</option>
-                                <option value="freelance">Freelancing Services</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Get a Quote</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215373510728!2d-73.98784492430212!3d40.74844097138945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689877882902!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+  <div class="container">
+    <h2 class="contact-title animate-fade-in">Get In Touch</h2>
+    <p class="contact-subtitle animate-fade-in delay-1">Ready to start your project? Contact us today for a free consultation.</p>
+    
+    <div class="contact-container">
+      <!-- Contact Info -->
+      <div class="contact-info animate-slide-left">
+        <h3>Contact Information</h3>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <p>123 Tech Street, Innovation City, IC 12345</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <p>+1 (555) 123-4567</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <p>hello@vraha.com</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <p>Monday - Friday: 9AM - 6PM</p>
+          </div>
         </div>
-    </section>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+
+        <!-- WhatsApp Button -->
+        <div class="whatsapp-contact">
+          <a href="https://wa.me/919999999999?text=Hi%20Vraha!%20I%20am%20interested%20in%20your%20services." target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Message Us on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form animate-slide-right delay-1">
+        <form id="quoteForm">
+          <div class="form-group"><input type="text" class="form-control" id="name" placeholder="Your Name" required></div>
+          <div class="form-group"><input type="email" class="form-control" id="email" placeholder="Your Email" required></div>
+          <div class="form-group">
+            <select class="form-control" id="service" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="web">Website Development</option>
+              <option value="app">Mobile App Development</option>
+              <option value="branding">Advertising & Branding</option>
+              <option value="video">Video Editing & B-Rolls</option>
+              <option value="design">Poster Design</option>
+              <option value="automation">Automation Tools</option>
+              <option value="freelance">Freelancing Services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea></div>
+          <button type="submit" class="btn btn-primary animate-bounce">Get a Quote</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-container animate-fade-in delay-2">
+      <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <style>
+    #contact {
+      padding: 4rem 1rem;
+      background: var(--secondary);
+      text-align: center;
+    }
+
+    .contact-title {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1 1 400px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+    }
+
+    .contact-details {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-icon {
+      margin-right: 10px;
+      color: var(--accent);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      transition: transform 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: scale(1.2);
+    }
+
+    .whatsapp-contact {
+      margin-top: 2rem;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      background-color: #1ebe5d;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      outline: none;
+    }
+
+    .form-control::placeholder {
+      color: #ccc;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: #00ffd5;
+    }
+
+    .map-container {
+      margin-top: 4rem;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .animate-fade-in { animation: fadeIn 1s ease forwards; }
+    .animate-slide-left { animation: slideLeft 1s ease forwards; }
+    .animate-slide-right { animation: slideRight 1s ease forwards; }
+    .animate-bounce { animation: bounce 2s infinite; }
+
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</section>
+
 
     <!-- Footer -->
     <footer>
