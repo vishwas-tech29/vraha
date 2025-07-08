@@ -1665,7 +1665,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
+    <!-- <section id="testimonials">
         <div class="container">
             <h2>What Our Clients Say</h2>
             <p>Hear from businesses that have transformed with our solutions.</p>
@@ -1699,7 +1699,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="contact">
@@ -1714,15 +1714,15 @@
         <div class="contact-details">
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <p>123 Tech Street, Innovation City, IC 12345</p>
+            <p>hyderabad,telangana,502032</p>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-            <p>+1 (555) 123-4567</p>
+            <p>+91 7396439736, +91 7382676837</p>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <p>hello@vraha.com</p>
+            <p>vrahasolutions@gmail.com</p>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-clock"></i></div>
@@ -2112,166 +2112,6 @@
             });
         });
 
-        // Testimonial Slider
-        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-        const testimonialDots = document.querySelectorAll('.testimonial-dot');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            testimonialSlides.forEach(slide => slide.classList.remove('active'));
-            testimonialDots.forEach(dot => dot.classList.remove('active'));
-            
-            testimonialSlides[index].classList.add('active');
-            testimonialDots[index].classList.add('active');
-            currentSlide = index;
-        }
-
-        testimonialDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showSlide(index));
-        });
-
-        // Auto-advance slides
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % testimonialSlides.length;
-            showSlide(currentSlide);
-        }, 5000);
-
-        // Quote Form
-        const quoteForm = document.getElementById('quoteForm');
-        const quoteModal = document.getElementById('quoteModal');
-        const closeModal = document.querySelector('.close-modal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-
-        quoteForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            quoteModal.classList.add('active');
-            quoteForm.reset();
-        });
-
-        closeModal.addEventListener('click', () => {
-            quoteModal.classList.remove('active');
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            quoteModal.classList.remove('active');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === quoteModal) {
-                quoteModal.classList.remove('active');
-            }
-        });
-
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Hero text animation
-        gsap.from('.hero-content h1, .hero-content p, .hero-btns', {
-            duration: 1,
-            y: 50,
-            opacity: 0,
-            stagger: 0.2,
-            ease: 'power3.out'
-        });
-
-        // Floating shapes animation
-        gsap.to('.shape-1', {
-            duration: 15,
-            x: 100,
-            y: 50,
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut'
-        });
-
-        gsap.to('.shape-2', {
-            duration: 20,
-            x: -100,
-            y: -50,
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut'
-        });
-
-        gsap.to('.shape-3', {
-            duration: 12,
-            x: -50,
-            y: 30,
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut'
-        });
-
-        // Section animations
-        gsap.utils.toArray('section').forEach(section => {
-            gsap.from(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: 'power3.out'
-            });
-        });
-
-        // Service cards animation
-        gsap.utils.toArray('.service-card').forEach((card, i) => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: 'power3.out'
-            });
-        });
-
-        // Portfolio items animation
-        gsap.utils.toArray('.portfolio-item').forEach((item, i) => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: 'power3.out'
-            });
-        });
-
-        // Feature items animation
-        gsap.utils.toArray('.feature-item').forEach((item, i) => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                y: 50,
-                opacity: 0,
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: 'power3.out'
-            });
-        });
-
-        // Initialize counters when about section is in view
-        ScrollTrigger.create({
-            trigger: "#about",
-            start: "top 70%",
-            onEnter: animateCounters,
-            once: true
-        });
-    </script>
+        
 </body>
 </html>
