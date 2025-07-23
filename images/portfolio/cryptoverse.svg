@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <!-- Background with gradient -->
+  <rect width="600" height="400" fill="#121212"/>
+  
+  <!-- Blockchain network visualization -->
+  <g>
+    <!-- Network nodes -->
+    <g>
+      <!-- Main nodes -->
+      <circle cx="150" cy="100" r="15" fill="#9d4edd" opacity="0.9" />
+      <circle cx="250" cy="150" r="15" fill="#ff2a6d" opacity="0.9" />
+      <circle cx="350" cy="100" r="15" fill="#00eeff" opacity="0.9" />
+      <circle cx="450" cy="150" r="15" fill="#9d4edd" opacity="0.9" />
+      <circle cx="150" cy="250" r="15" fill="#00eeff" opacity="0.9" />
+      <circle cx="250" cy="300" r="15" fill="#9d4edd" opacity="0.9" />
+      <circle cx="350" cy="250" r="15" fill="#ff2a6d" opacity="0.9" />
+      <circle cx="450" cy="300" r="15" fill="#00eeff" opacity="0.9" />
+      
+      <!-- Secondary nodes -->
+      <circle cx="200" cy="125" r="8" fill="#ffffff" opacity="0.6" />
+      <circle cx="300" cy="125" r="8" fill="#ffffff" opacity="0.6" />
+      <circle cx="400" cy="125" r="8" fill="#ffffff" opacity="0.6" />
+      <circle cx="200" cy="275" r="8" fill="#ffffff" opacity="0.6" />
+      <circle cx="300" cy="275" r="8" fill="#ffffff" opacity="0.6" />
+      <circle cx="400" cy="275" r="8" fill="#ffffff" opacity="0.6" />
+    </g>
+    
+    <!-- Network connections -->
+    <g stroke-width="2" opacity="0.5">
+      <!-- Main connections -->
+      <line x1="150" y1="100" x2="250" y2="150" stroke="#9d4edd" />
+      <line x1="250" y1="150" x2="350" y2="100" stroke="#ff2a6d" />
+      <line x1="350" y1="100" x2="450" y2="150" stroke="#00eeff" />
+      <line x1="150" y1="250" x2="250" y2="300" stroke="#00eeff" />
+      <line x1="250" y1="300" x2="350" y2="250" stroke="#9d4edd" />
+      <line x1="350" y1="250" x2="450" y2="300" stroke="#ff2a6d" />
+      
+      <!-- Cross connections -->
+      <line x1="150" y1="100" x2="150" y2="250" stroke="#ffffff" opacity="0.3" />
+      <line x1="250" y1="150" x2="250" y2="300" stroke="#ffffff" opacity="0.3" />
+      <line x1="350" y1="100" x2="350" y2="250" stroke="#ffffff" opacity="0.3" />
+      <line x1="450" y1="150" x2="450" y2="300" stroke="#ffffff" opacity="0.3" />
+      
+      <!-- Secondary connections -->
+      <line x1="150" y1="100" x2="200" y2="125" stroke="#ffffff" opacity="0.3" />
+      <line x1="250" y1="150" x2="200" y2="125" stroke="#ffffff" opacity="0.3" />
+      <line x1="250" y1="150" x2="300" y2="125" stroke="#ffffff" opacity="0.3" />
+      <line x1="350" y1="100" x2="300" y2="125" stroke="#ffffff" opacity="0.3" />
+      <line x1="350" y1="100" x2="400" y2="125" stroke="#ffffff" opacity="0.3" />
+      <line x1="450" y1="150" x2="400" y2="125" stroke="#ffffff" opacity="0.3" />
+      
+      <line x1="150" y1="250" x2="200" y2="275" stroke="#ffffff" opacity="0.3" />
+      <line x1="250" y1="300" x2="200" y2="275" stroke="#ffffff" opacity="0.3" />
+      <line x1="250" y1="300" x2="300" y2="275" stroke="#ffffff" opacity="0.3" />
+      <line x1="350" y1="250" x2="300" y2="275" stroke="#ffffff" opacity="0.3" />
+      <line x1="350" y1="250" x2="400" y2="275" stroke="#ffffff" opacity="0.3" />
+      <line x1="450" y1="300" x2="400" y2="275" stroke="#ffffff" opacity="0.3" />
+    </g>
+    
+    <!-- Data particles -->
+    <g>
+      <circle cx="180" cy="115" r="3" fill="#ff2a6d" opacity="0.8" />
+      <circle cx="280" cy="135" r="3" fill="#00eeff" opacity="0.8" />
+      <circle cx="380" cy="115" r="3" fill="#9d4edd" opacity="0.8" />
+      <circle cx="180" cy="265" r="3" fill="#00eeff" opacity="0.8" />
+      <circle cx="280" cy="285" r="3" fill="#ff2a6d" opacity="0.8" />
+      <circle cx="380" cy="265" r="3" fill="#9d4edd" opacity="0.8" />
+    </g>
+  </g>
+  
+  <!-- Web3 elements -->
+  <g>
+    <!-- Ethereum-like symbol -->
+    <g transform="translate(100, 175)">
+      <path d="M0,-25 L20,0 L0,25 L-20,0 Z" fill="none" stroke="#00eeff" stroke-width="2" opacity="0.8" />
+      <path d="M0,-25 L0,25" stroke="#00eeff" stroke-width="2" opacity="0.8" />
+    </g>
+    
+    <!-- NFT frame -->
+    <g transform="translate(500, 175)">
+      <rect x="-25" y="-25" width="50" height="50" fill="none" stroke="#ff2a6d" stroke-width="2" opacity="0.8" />
+      <path d="M-15,-15 L15,15 M-15,15 L15,-15" stroke="#ff2a6d" stroke-width="1" opacity="0.6" />
+    </g>
+    
+    <!-- Binary data -->
+    <g transform="translate(300, 200)" fill="#ffffff" opacity="0.4" font-family="'Courier New', monospace" font-size="8">
+      <text x="-100" y="-50">01001100 01001111 01000111</text>
+      <text x="-100" y="-40">01000010 01001100 01001111</text>
+      <text x="-100" y="-30">01000011 01001011 01000011</text>
+      <text x="-100" y="-20">01001000 01000001 01001001</text>
+      <text x="-100" y="-10">01001110 01010111 01000101</text>
+    </g>
+  </g>
+  
+  <!-- Interface elements -->
+  <g>
+    <!-- Dashboard frame -->
+    <rect x="50" y="330" width="500" height="50" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5" rx="5" ry="5" />
+    
+    <!-- Dashboard elements -->
+    <g transform="translate(100, 355)">
+      <rect x="-30" y="-15" width="60" height="30" fill="#9d4edd" opacity="0.5" rx="3" ry="3" />
+      <text x="0" y="5" font-family="'Arial', sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">WALLET</text>
+    </g>
+    
+    <g transform="translate(200, 355)">
+      <rect x="-30" y="-15" width="60" height="30" fill="#ff2a6d" opacity="0.5" rx="3" ry="3" />
+      <text x="0" y="5" font-family="'Arial', sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">TOKENS</text>
+    </g>
+    
+    <g transform="translate(300, 355)">
+      <rect x="-30" y="-15" width="60" height="30" fill="#00eeff" opacity="0.5" rx="3" ry="3" />
+      <text x="0" y="5" font-family="'Arial', sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">NFTs</text>
+    </g>
+    
+    <g transform="translate(400, 355)">
+      <rect x="-30" y="-15" width="60" height="30" fill="#9d4edd" opacity="0.5" rx="3" ry="3" />
+      <text x="0" y="5" font-family="'Arial', sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">DEFI</text>
+    </g>
+    
+    <g transform="translate(500, 355)">
+      <rect x="-30" y="-15" width="60" height="30" fill="#ff2a6d" opacity="0.5" rx="3" ry="3" />
+      <text x="0" y="5" font-family="'Arial', sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">DAPPS</text>
+    </g>
+  </g>
+  
+  <!-- Project Title -->
+  <g transform="translate(300, 50)">
+    <text x="0" y="0" font-family="'Arial', sans-serif" font-size="28" fill="#ffffff" text-anchor="middle" font-weight="bold">CRYPTOVERSE</text>
+    <text x="0" y="30" font-family="'Arial', sans-serif" font-size="14" fill="#00eeff" text-anchor="middle">WEB3 EXPERIENCE DESIGN</text>
+  </g>
+  
+  <!-- Glowing effect overlay -->
+  <circle cx="300" cy="200" r="180" fill="url(#cryptoGlow)" opacity="0.15" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <radialGradient id="cryptoGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#9d4edd;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#121212;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>

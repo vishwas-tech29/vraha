@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <!-- Background with gradient -->
+  <rect width="600" height="400" fill="#121212"/>
+  
+  <!-- Audio waveform visualization -->
+  <g transform="translate(300, 200)" opacity="0.8">
+    <!-- Pulse waveform -->
+    <path d="M-250,0 C-220,-50 -200,30 -170,0 C-140,-70 -120,50 -90,0 C-60,-40 -40,20 -10,0 C20,-80 40,60 70,0 C100,-30 120,20 150,0 C180,-60 200,40 230,0 C260,-20 280,10 250,0" 
+          stroke="#ff2a6d" stroke-width="3" fill="none" />
+    
+    <!-- Echo waves -->
+    <path d="M-250,0 C-220,-30 -200,20 -170,0 C-140,-50 -120,30 -90,0 C-60,-20 -40,10 -10,0 C20,-60 40,40 70,0 C100,-20 120,10 150,0 C180,-40 200,30 230,0 C260,-10 280,5 250,0" 
+          stroke="#9d4edd" stroke-width="2" fill="none" opacity="0.6" />
+    
+    <path d="M-250,0 C-220,-15 -200,10 -170,0 C-140,-25 -120,15 -90,0 C-60,-10 -40,5 -10,0 C20,-30 40,20 70,0 C100,-10 120,5 150,0 C180,-20 200,15 230,0 C260,-5 280,2 250,0" 
+          stroke="#00eeff" stroke-width="1" fill="none" opacity="0.4" />
+  </g>
+  
+  <!-- Circular audio visualizer elements -->
+  <g transform="translate(300, 200)">
+    <!-- Outer rings -->
+    <circle cx="0" cy="0" r="120" stroke="#ff2a6d" stroke-width="1" fill="none" opacity="0.3" />
+    <circle cx="0" cy="0" r="100" stroke="#9d4edd" stroke-width="1" fill="none" opacity="0.4" />
+    <circle cx="0" cy="0" r="80" stroke="#00eeff" stroke-width="1" fill="none" opacity="0.5" />
+    
+    <!-- Frequency bars (circular) -->
+    <g>
+      <!-- Group 1 -->
+      <line x1="0" y1="-60" x2="0" y2="-40" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="12" y1="-59" x2="12" y2="-30" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="24" y1="-56" x2="24" y2="-35" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="36" y1="-51" x2="36" y2="-25" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="48" y1="-44" x2="48" y2="-15" stroke="#ff2a6d" stroke-width="4" />
+      
+      <!-- Group 2 -->
+      <line x1="-12" y1="-59" x2="-12" y2="-35" stroke="#9d4edd" stroke-width="4" />
+      <line x1="-24" y1="-56" x2="-24" y2="-20" stroke="#9d4edd" stroke-width="4" />
+      <line x1="-36" y1="-51" x2="-36" y2="-30" stroke="#9d4edd" stroke-width="4" />
+      <line x1="-48" y1="-44" x2="-48" y2="-25" stroke="#9d4edd" stroke-width="4" />
+      
+      <!-- Group 3 -->
+      <line x1="0" y1="60" x2="0" y2="45" stroke="#00eeff" stroke-width="4" />
+      <line x1="12" y1="59" x2="12" y2="35" stroke="#00eeff" stroke-width="4" />
+      <line x1="24" y1="56" x2="24" y2="25" stroke="#00eeff" stroke-width="4" />
+      <line x1="36" y1="51" x2="36" y2="30" stroke="#00eeff" stroke-width="4" />
+      <line x1="48" y1="44" x2="48" y2="20" stroke="#00eeff" stroke-width="4" />
+      
+      <!-- Group 4 -->
+      <line x1="-12" y1="59" x2="-12" y2="40" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="-24" y1="56" x2="-24" y2="30" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="-36" y1="51" x2="-36" y2="35" stroke="#ff2a6d" stroke-width="4" />
+      <line x1="-48" y1="44" x2="-48" y2="25" stroke="#ff2a6d" stroke-width="4" />
+    </g>
+    
+    <!-- Center pulse -->
+    <circle cx="0" cy="0" r="15" fill="#ffffff" opacity="0.8" />
+    <circle cx="0" cy="0" r="10" fill="#ff2a6d" />
+  </g>
+  
+  <!-- Motion graphics elements -->
+  <g>
+    <!-- Timeline indicator -->
+    <rect x="150" y="320" width="300" height="10" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+    <rect x="150" y="320" width="100" height="10" fill="#ff2a6d" opacity="0.7" />
+    <circle cx="250" cy="325" r="5" fill="#ffffff" />
+    
+    <!-- Frame counter -->
+    <text x="460" y="330" font-family="'Courier New', monospace" font-size="12" fill="#ffffff" text-anchor="end">01:24 / 03:45</text>
+  </g>
+  
+  <!-- Project Title -->
+  <g transform="translate(300, 50)">
+    <text x="0" y="0" font-family="'Arial', sans-serif" font-size="28" fill="#ffffff" text-anchor="middle" font-weight="bold">PULSE</text>
+    <text x="0" y="30" font-family="'Arial', sans-serif" font-size="14" fill="#ff2a6d" text-anchor="middle">MOTION GRAPHICS & SOUND DESIGN</text>
+  </g>
+  
+  <!-- Glowing effect overlay -->
+  <circle cx="300" cy="200" r="150" fill="url(#pulseGlow)" opacity="0.15" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <radialGradient id="pulseGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#ff2a6d;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#121212;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>

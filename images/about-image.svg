@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <!-- Background with gradient -->
+  <rect width="600" height="400" fill="#121212"/>
+  
+  <!-- Abstract tech pattern -->
+  <g opacity="0.6">
+    <!-- Grid lines -->
+    <g stroke="#00eeff" stroke-width="0.5" opacity="0.3">
+      <line x1="0" y1="50" x2="600" y2="50" />
+      <line x1="0" y1="100" x2="600" y2="100" />
+      <line x1="0" y1="150" x2="600" y2="150" />
+      <line x1="0" y1="200" x2="600" y2="200" />
+      <line x1="0" y1="250" x2="600" y2="250" />
+      <line x1="0" y1="300" x2="600" y2="300" />
+      <line x1="0" y1="350" x2="600" y2="350" />
+      
+      <line x1="50" y1="0" x2="50" y2="400" />
+      <line x1="100" y1="0" x2="100" y2="400" />
+      <line x1="150" y1="0" x2="150" y2="400" />
+      <line x1="200" y1="0" x2="200" y2="400" />
+      <line x1="250" y1="0" x2="250" y2="400" />
+      <line x1="300" y1="0" x2="300" y2="400" />
+      <line x1="350" y1="0" x2="350" y2="400" />
+      <line x1="400" y1="0" x2="400" y2="400" />
+      <line x1="450" y1="0" x2="450" y2="400" />
+      <line x1="500" y1="0" x2="500" y2="400" />
+      <line x1="550" y1="0" x2="550" y2="400" />
+    </g>
+    
+    <!-- Circles -->
+    <circle cx="150" cy="150" r="50" fill="none" stroke="#9d4edd" stroke-width="2" opacity="0.7" />
+    <circle cx="450" cy="250" r="70" fill="none" stroke="#ff2a6d" stroke-width="2" opacity="0.7" />
+    <circle cx="300" cy="200" r="120" fill="none" stroke="#00eeff" stroke-width="1" opacity="0.4" />
+    
+    <!-- Decorative elements -->
+    <path d="M100,100 L200,120 L180,200 Z" fill="#9d4edd" opacity="0.3" />
+    <path d="M400,150 L500,170 L450,250 Z" fill="#00eeff" opacity="0.3" />
+    <path d="M250,300 L350,320 L300,380 Z" fill="#ff2a6d" opacity="0.3" />
+  </g>
+  
+  <!-- Central logo/symbol -->
+  <g transform="translate(300, 200)">
+    <!-- V shape for Vraha -->
+    <path d="M-60,-60 L0,60 L60,-60" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Horizontal line -->
+    <line x1="-80" y1="0" x2="80" y2="0" stroke="#00eeff" stroke-width="3" opacity="0.8" stroke-linecap="round" />
+    
+    <!-- Decorative dots -->
+    <circle cx="0" cy="0" r="8" fill="#ff2a6d"/>
+    <circle cx="-60" cy="-60" r="5" fill="#00eeff"/>
+    <circle cx="60" cy="-60" r="5" fill="#00eeff"/>
+    <circle cx="0" cy="60" r="5" fill="#9d4edd"/>
+  </g>
+  
+  <!-- Glowing effect overlay -->
+  <circle cx="300" cy="200" r="150" fill="url(#glow)" opacity="0.2" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#00eeff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#121212;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>

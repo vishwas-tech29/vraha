@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <!-- Background with gradient -->
+  <rect width="600" height="400" fill="#121212"/>
+  
+  <!-- Motion graphics elements -->
+  <g>
+    <!-- Dynamic shapes with motion trails -->
+    <g opacity="0.8">
+      <!-- Shape 1 with motion trail -->
+      <circle cx="150" cy="150" r="25" fill="#ff2a6d" opacity="0.9" />
+      <circle cx="140" cy="145" r="25" fill="#ff2a6d" opacity="0.6" />
+      <circle cx="130" cy="140" r="25" fill="#ff2a6d" opacity="0.3" />
+      <circle cx="120" cy="135" r="25" fill="#ff2a6d" opacity="0.1" />
+      
+      <!-- Shape 2 with motion trail -->
+      <rect x="325" y="125" width="50" height="50" fill="#00eeff" opacity="0.9" />
+      <rect x="335" y="130" width="50" height="50" fill="#00eeff" opacity="0.6" />
+      <rect x="345" y="135" width="50" height="50" fill="#00eeff" opacity="0.3" />
+      <rect x="355" y="140" width="50" height="50" fill="#00eeff" opacity="0.1" />
+      
+      <!-- Shape 3 with motion trail -->
+      <polygon points="150,250 175,300 125,300" fill="#9d4edd" opacity="0.9" />
+      <polygon points="155,245 180,295 130,295" fill="#9d4edd" opacity="0.6" />
+      <polygon points="160,240 185,290 135,290" fill="#9d4edd" opacity="0.3" />
+      <polygon points="165,235 190,285 140,285" fill="#9d4edd" opacity="0.1" />
+      
+      <!-- Shape 4 with motion trail -->
+      <ellipse cx="400" cy="250" rx="40" ry="25" fill="#ff2a6d" opacity="0.9" transform="rotate(15, 400, 250)" />
+      <ellipse cx="410" cy="255" rx="40" ry="25" fill="#ff2a6d" opacity="0.6" transform="rotate(10, 410, 255)" />
+      <ellipse cx="420" cy="260" rx="40" ry="25" fill="#ff2a6d" opacity="0.3" transform="rotate(5, 420, 260)" />
+      <ellipse cx="430" cy="265" rx="40" ry="25" fill="#ff2a6d" opacity="0.1" transform="rotate(0, 430, 265)" />
+    </g>
+    
+    <!-- Motion lines and accents -->
+    <g stroke-width="2" fill="none" opacity="0.7">
+      <path d="M100,100 C150,50 200,150 250,100" stroke="#ffffff" />
+      <path d="M350,100 C400,50 450,150 500,100" stroke="#ffffff" />
+      <path d="M100,300 C150,250 200,350 250,300" stroke="#ffffff" />
+      <path d="M350,300 C400,250 450,350 500,300" stroke="#ffffff" />
+    </g>
+    
+    <!-- Particle effects -->
+    <g fill="#ffffff">
+      <circle cx="120" cy="120" r="2" opacity="0.8" />
+      <circle cx="140" cy="90" r="1" opacity="0.6" />
+      <circle cx="160" cy="130" r="1.5" opacity="0.7" />
+      <circle cx="180" cy="100" r="1" opacity="0.5" />
+      <circle cx="200" cy="140" r="2" opacity="0.8" />
+      
+      <circle cx="370" cy="120" r="2" opacity="0.8" />
+      <circle cx="390" cy="90" r="1" opacity="0.6" />
+      <circle cx="410" cy="130" r="1.5" opacity="0.7" />
+      <circle cx="430" cy="100" r="1" opacity="0.5" />
+      <circle cx="450" cy="140" r="2" opacity="0.8" />
+      
+      <circle cx="120" cy="270" r="2" opacity="0.8" />
+      <circle cx="140" cy="240" r="1" opacity="0.6" />
+      <circle cx="160" cy="280" r="1.5" opacity="0.7" />
+      <circle cx="180" cy="250" r="1" opacity="0.5" />
+      <circle cx="200" cy="290" r="2" opacity="0.8" />
+      
+      <circle cx="370" cy="270" r="2" opacity="0.8" />
+      <circle cx="390" cy="240" r="1" opacity="0.6" />
+      <circle cx="410" cy="280" r="1.5" opacity="0.7" />
+      <circle cx="430" cy="250" r="1" opacity="0.5" />
+      <circle cx="450" cy="290" r="2" opacity="0.8" />
+    </g>
+  </g>
+  
+  <!-- Animation timeline -->
+  <g transform="translate(300, 350)">
+    <!-- Timeline bar -->
+    <rect x="-200" y="-15" width="400" height="30" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.5" rx="5" ry="5" />
+    
+    <!-- Timeline markers -->
+    <line x1="-200" y1="0" x2="200" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="-150" y1="-10" x2="-150" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="-100" y1="-10" x2="-100" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="-50" y1="-10" x2="-50" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="0" y1="-10" x2="0" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="50" y1="-10" x2="50" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="100" y1="-10" x2="100" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    <line x1="150" y1="-10" x2="150" y2="10" stroke="#ffffff" stroke-width="1" opacity="0.3" />
+    
+    <!-- Playhead -->
+    <rect x="-50" y="-15" width="5" height="30" fill="#ff2a6d" />
+    
+    <!-- Keyframes -->
+    <circle cx="-150" cy="0" r="4" fill="#00eeff" />
+    <circle cx="-50" cy="0" r="4" fill="#ff2a6d" />
+    <circle cx="50" cy="0" r="4" fill="#9d4edd" />
+    <circle cx="150" cy="0" r="4" fill="#00eeff" />
+  </g>
+  
+  <!-- Project Title -->
+  <g transform="translate(300, 50)">
+    <text x="0" y="0" font-family="'Arial', sans-serif" font-size="28" fill="#ffffff" text-anchor="middle" font-weight="bold">KINETIC</text>
+    <text x="0" y="30" font-family="'Arial', sans-serif" font-size="14" fill="#9d4edd" text-anchor="middle">MOTION GRAPHICS & ANIMATION</text>
+  </g>
+  
+  <!-- Glowing effect overlay -->
+  <circle cx="300" cy="200" r="180" fill="url(#kineticGlow)" opacity="0.15" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <radialGradient id="kineticGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#ff2a6d;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#121212;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>
